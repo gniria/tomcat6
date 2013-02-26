@@ -1,3 +1,6 @@
+资料参考：
+http://thinkinmylife.iteye.com/blog/805058
+
 各组件基本介绍：
 Container：
 可以理解为处理某类型请求的容器，处理的方式一般为【把处理请求的处理器包装为Valve对象】，并【按一定顺序放入类型为Pipeline的管道里】。  
@@ -19,3 +22,11 @@ Context在创建的时候将根据配置文件$CATALINA_HOME/conf/web.xml$WEBAPP_HOME/WEB-INF
 
 Wrapper：
 Wrapper是针对每个Servlet的Container，【每个Servlet都有相应的Wrapper来管理】。
+
+
+- Bootstrap - 载入JVM自带的类和$JAVA_HOME/jre/lib/ext/*.jar
+- System - 载入$CLASSPATH/*.class，$CATALINA_HOME/bin/bootstrap.jar...
+- Common - 载入$CATALINA_HOME/common/...，它们对TOMCAT和所有的WEB APP都可见
+- Catalina - 载入$CATALINA_HOME/server/...，它们仅对TOMCAT可见，对所有的WEB APP都不可见
+- Shared - 载入$CATALINA_HOME/shared/...，它们仅对所有WEB APP可见，对TOMCAT不可见（也不必见）
+- WebApp - 载入ContextBase/WEB-INF/classes...，ContextBase/WEB-INF/lib；它们仅对该WEB APP可见
