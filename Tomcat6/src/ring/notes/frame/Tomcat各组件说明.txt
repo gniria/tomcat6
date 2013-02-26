@@ -1,0 +1,21 @@
+各组件基本介绍：
+Container：
+可以理解为处理某类型请求的容器，处理的方式一般为【把处理请求的处理器包装为Valve对象】，并【按一定顺序放入类型为Pipeline的管道里】。  
+Container里包含一些基础服务，如Loader、Manager和Realm。
+包括以下类型：
+
+Engine：
+Engine包含Host和Context，接到请求后仍给相应的Host在相应的Context里处理。
+
+Host：
+Engine下可以配置多个虚拟主机Virtual Host，每个虚拟主机都有一个域名 
+当Engine获得一个请求时，它把该请求匹配到某个Host上，然后把该请求交给该Host来处理 
+Engine有一个默认虚拟主机，当请求无法匹配到任何一个Host上的时候，将交给该默认Host来处理
+
+Context：
+【一个Context对应于一个Web Application】，【一个Web Application由一个或者多个Servlet组成 】。
+Context在创建的时候将根据配置文件$CATALINA_HOME/conf/web.xml$WEBAPP_HOME/WEB-INF/web.xml载入Servlet类 。
+当Context获得请求时，将在自己的映射表(mapping table)中寻找相匹配的Servlet类
+
+Wrapper：
+Wrapper是针对每个Servlet的Container，【每个Servlet都有相应的Wrapper来管理】。

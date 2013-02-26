@@ -1,0 +1,20 @@
+<Server port="8005" shutdown="SHUTDOWN" debug="0">
+  <Service name="Tomcat-Standalone">
+    <!-- HTTP/1.1-->
+    <Connector className="org.apache.coyote.tomcat4.CoyoteConnector"  port="8080".....
+    <!--Coyote/JK2-->
+   <Connector className="org.apache.coyote.tomcat4.CoyoteConnector"  port="8009".....
+   <Engine name="Standalone" defaultHost="localhost" debug="0">
+      <Logger className="org.apache.catalina.logger.FileLogger" .../>
+      <Realm className="org.apache.catalina.realm.UserDatabaseRealm" .../>
+       .....
+      <Host name="localhost" debug="0" appBase="webapps" unpackWARs="true" autoDeploy="true">    
+        <Context path="" docBase="mycontext" debug="0"/>
+        <Context path="/wsota" docBase="wsotaProject" debug="0"/>  
+      </Host>
+      <Host name="www.taobao.com"......
+    </Engine>
+  </Service>
+ <Service name=“Tomcat-demo”>….
+ </Service>
+</Server>
