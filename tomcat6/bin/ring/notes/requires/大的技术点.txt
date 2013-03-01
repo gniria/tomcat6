@@ -1,0 +1,8 @@
+2013-03-01
+虽然说不应该贪多，但还是应该看看学习Tomcat所必需的一些技术点(这些技术点可以不作为重点，但是需要了解原理)。
+
+1. log java写的日志工具。tomcat本身引用的有一个，关于java logger是如何实现的，有必要了解下。 jakara项目
+下有个 commons-logging.jar ,jre本身也有一个log的实现。
+ 
+
+

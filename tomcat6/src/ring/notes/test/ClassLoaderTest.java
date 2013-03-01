@@ -1,4 +1,4 @@
-package notes.test;
+package ring.notes.test;
 
 /**
  * JVM在运行时会产生三个ClassLoader:
